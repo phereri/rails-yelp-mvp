@@ -1,0 +1,14 @@
+<h1>Restaurants</h1>
+<% @restaurants.each do |rest| %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= rest.name %></h5>
+      <p class="card-text">Address: <%= rest.address %></p>
+      <p class="card-text"><small class="text-muted">Category: <%= rest.category %></small></p>
+      <p class="card-text"><%= link_to 'See details', restaurant_path(rest), class: 'btn btn-primary' %></p>
+    </div>
+  </div>
+<% end %>
+
+<hr>
+<%= link_to 'Create a new restaurant', new_restaurant_path, class: 'btn btn-secondary' %>
